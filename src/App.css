@@ -1,0 +1,164 @@
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.hidden {
+    display: none;
+}
+
+
+body{
+    background-color: #232C31;
+    margin: 0;
+    padding: 0;
+    color: #adbec6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    background-color: #2f3e45;
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 105;
+}
+
+.headerContent{
+    /*padding: 0 10px;*/
+    display: flex;
+    padding: 15px 10px 15px 20px
+}
+
+.header_logo_section{
+    width: 23.45%;
+    display: flex;
+    align-items: center;
+    border-right: lawngreen;
+}
+
+.header img{
+    height: 45px;
+    max-width: 90%;
+}
+
+.header_menu_section{
+    width: 76.55%;
+    display: flex;
+    flex-direction:row ;
+}
+
+.header_menu_navbar_section{
+    display: flex;
+    width: 80%;
+}
+
+.header_menu_login_section{
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+}
+
+.header_menu_profile_section{
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.btnJoin{ 
+    background-color: #fcee71; /* Green */
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: all .4s ease;
+    color: #1e2a30;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 22px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btnLogin{ 
+    background-color: #1e2a30; /* Green */
+    cursor: pointer;
+    opacity: 0.85;
+    transition: all .4s ease;
+    border-radius: 5px;
+    color: #adbec6;
+    border: none;
+    padding: 10px 22px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.btnJoin:hover{
+    opacity: 1;
+}
+
+.btnLogin:hover{
+    opacity: 1;
+}
+
+.signup_popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(35,44,48,.95);
+    z-index: 99999;
+    overflow-y: scroll;
+}
+
+.signup_popup_inner{
+    position: absolute;
+    width: 390px;
+    height: 720px;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 5px;
+    background-color: #2f3d45;
+}
+
+.popup_close{
+    position: absolute;
+    background-color: coral;
+    left: 104%;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+}
+
+.main{
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.footer{
+    width: 100%;
+    align-items: center;
+    transition: all .4s ease;
+    height: 360px;
+    background-color: #1e262a;
+}
