@@ -8,7 +8,7 @@ function Main(props) {
     <div>
       <div className="main">
         {
-          props.user.userId !== '' ?
+          props.user !== null ?
             <div>
               <p> Estas logeado </p>
               <button onClick={props.signOutUser}>Sign Out</button> 
@@ -16,7 +16,7 @@ function Main(props) {
           :  <p>  No estas logeado </p> 
           
         }
-        {props.showProfile && props.user.userId !== ''  ? <Profile /> : null}
+        {props.showProfile && props.user !== null  ? <Profile /> : null}
         </div>
 
         <Footer />

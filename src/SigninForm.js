@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { AuthContext } from "./App";
+import React, { useState } from "react";
 import * as firebase from "firebase"
 
 function SigninForm (props) {
@@ -7,7 +6,6 @@ function SigninForm (props) {
   const [password, setPassword] = useState("");
   const [error, setErrors] = useState("");
 
-  const Auth = useContext(AuthContext);
   
   const handleForm = e => {
     e.preventDefault();
@@ -34,6 +32,9 @@ function SigninForm (props) {
           placeholder="email"
         />
 
+        <br></br>
+        <br></br>
+        
         <input
           onChange={e => setPassword(e.target.value)}
           name="password"

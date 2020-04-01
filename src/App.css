@@ -121,7 +121,7 @@ body{
     bottom: 0;
     background-color: rgba(35,44,48,.95);
     z-index: 99999;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 }
 
 .signup_popup_inner{
@@ -161,4 +161,21 @@ body{
     transition: all .4s ease;
     height: 360px;
     background-color: #1e262a;
+}
+
+.coinsContainer{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+    height: 42px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: rgb(35, 209, 96);
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 20px;
+    background: rgb(26, 37, 43);
+    border-radius: 6px;
+    padding: 0px 20px;
 }

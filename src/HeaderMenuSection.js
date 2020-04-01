@@ -15,7 +15,7 @@ function HeaderMenuSection() {
       <HeaderNavbarSection />
       
       { 
-      user.userId !=='' ? <HeaderProfileSection /> : <HeaderAuthSection /> 
+      user !== null ? <HeaderProfileSection /> : <HeaderAuthSection /> 
       }
     
     </div>

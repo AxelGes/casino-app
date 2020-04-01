@@ -15,36 +15,50 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 function App (){
-  const [user, setUser] = useState({ userId: '', email:'', username:'', coins:0 });
+  const [user, setUser] = useState(null);
   const [showSignup, setShowSignup] = useState(false);
   const [showSignin, setShowSignin] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
 
-  firebase.auth().onAuthStateChanged(function(firebaseUser) {
-    if (firebaseUser) {
-      // User is signed in
-      if(){
+  firebase.auth().onAuthStateChanged((firebaseUser) => {
+      if (firebaseUser) {
+        // User is signed in
+        
+        if(!user){
+        //User is signed in but data is not collected.
+        setUser({userId: '', email:firebaseUser.email, username:'', coins:''});
+        
         fetch('http://localhost:5000/users/' + firebaseUser.email)
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(myJson) {
-          const receivedUser = {userId: myJson._id, email:myJson.email, username:myJson.username, coins:myJson.coins};
-          console.log(receivedUser);
-          setUser(receivedUser);
-        });
+          .then((response) => {
+            if(response.ok){
+              return response.json()
+            } else{
+              return null
+            }
+          })
+          .then((response) => {
+            let receivedUser = null;
+
+            if(response != null){
+              receivedUser = {userId: response._id, email:response.email, username:response.username, coins:response.coins};   
+            }
+
+            setUser(receivedUser);
+            console.log(receivedUser)
+          })
+          .catch(error => console.error('Error:', error))
       }
     }
     else {
       // No user is signed in
-      setUser({ userId: '', email:'', username:'', coins:0 });
+      setUser(null);
     }
   });
 
   function signOutUser(){
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
-      setUser({ userId: '', email:'', username:'', coins:0 });
+      setUser(null);
     }).catch(function(error) {
       // An error happened.
     });

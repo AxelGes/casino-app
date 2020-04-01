@@ -16,7 +16,8 @@ function SignupForm (props) {
             .then(res => {
               if (res.user) {
                 const inputUser = {email:email, username:username, coins:0};
-                
+
+                //setTimeout(function () { para testing
                 //API
                 fetch('http://localhost:5000/users/add', {
                   method: 'POST', // or 'PUT'
@@ -30,8 +31,7 @@ function SignupForm (props) {
                   props.setShowSignup(false) 
                 })
                 .catch(error => console.error('Error:', error))
-
-                
+              //}, 500);
               }
             })
             .catch(e => {
@@ -51,7 +51,10 @@ function SignupForm (props) {
           type="email"
           placeholder="email"
         />
-        
+
+        <br></br>
+        <br></br>
+
         <input
           value={username}
           onChange={e => setUsername(e.target.value)}
@@ -59,6 +62,10 @@ function SignupForm (props) {
           type="text"
           placeholder="username"
         />
+
+        <br></br>
+        <br></br>
+
         <input
           onChange={e => setPassword(e.target.value)}
           name="password"
