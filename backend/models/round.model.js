@@ -18,11 +18,11 @@ const roundSchema = new Schema({
   hash: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     trim: true,
   },
   status: {
-    type: String,
+    type: Boolean, // 0 history round, 1 = active round
     required: true,
     unique: false,
     trim: true,

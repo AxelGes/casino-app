@@ -16,13 +16,19 @@ const betSchema = new Schema({
     trim: true,
   },
   color: {
-    type: Number,
+    type: Number, //0 = red, 1 = green, 2 = black 
     required: true,
     unique: false,
     trim: true,
   },
   round_id: {
     type: String,
+    required: true,
+    unique: false,
+    trim: true,
+  },
+  status: {
+    type: Number, //0 = pending, 1 = win, 2 = lose 
     required: true,
     unique: false,
     trim: true,
